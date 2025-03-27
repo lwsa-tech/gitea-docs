@@ -1,60 +1,26 @@
 # Gitea
 
-## Instalação
+## Uso
 
-### Preparação do blueprint
+### Criação de usuário
 
-Use como base o _blueprint_ disponível em [blueprint.yaml](https://github.com/lwsa-tech/platform-tools-workloads/blob/main/staging/blueprints/forge/blueprint.yaml).
+Crie um usuário no _Gitea_ logando-se via fonte de autenticação corporativa.
 
-O valor de `GITEA__mailer__PASSWD` no segredo `smtp` do _blueprint_ deve ser gerado e atualizado segundo orientação no repo [platform-infra](https://github.com/lwsa-tech/platform-infra).
+### Cadastro de chave SSH
 
-Ao aplicar pela primeira vez o _blueprint_, manter comentada a linha:
+Clique em `User Settings` -> `SSH / GPG Keys` e cadastre a parte pública da sua chave SSH.
 
-```yaml
-# GITEA__service__ALLOW_ONLY_EXTERNAL_REGISTRATION: "true"
-```
+### Token de acesso ao package registry
 
-### Criação do usuário admin
+Clique em `User Settings` -> `Applications` -> `Manage Access Tokens` e crie um novo token de acesso.
 
-No primeiro acesso, criar um usuário `admin`. Cadastre a senha no Keeper.
+Em `Token Name` coloque `Package Registry Token`. Clique em `Select permissions` e marque `package`: `Read and Write`. Pressione o botão `Generate Token` e copie o valor do token.
 
-No menu do _Gitea_, clicar em `Admin Settings` -> `Identity & Access` -> `Authentication Sources` e adicionar a fonte de autenticação corporativa.
+### Criação de repositório
 
-Uma vez adicionada a fonte de autenticação, descomentar a linha:
+Crie um novo repositório no _Gitea_ chamado `python-web-app`.
 
-```yaml
-GITEA__service__ALLOW_ONLY_EXTERNAL_REGISTRATION: "true"
-```
-e aplicar o _blueprint_ novamente via `git push` e operação de `Refresh`/`Sync` no _Argo CD_.
-
-Logar-se via fonte de autenticação corporativa como o usuário que deverá ser o administador do _Gitea_ para que fique cadastrado.
-
-Logar-se novamente como usuário `admin` e, no menu do _Gitea_, clicar em `Admin Settings` -> `Identity & Access` -> `User Accounts` e editar o usuário que se tornará o administrador, habilitado `Is Administrator` e `Update User Account`.
-
-### Configuração do acesso SSH
-
-Editar, no _blueprint_, a linha:
-
-```yaml
-# Configurar com um hostname que aponte para o IP do load balancer criado para a porta 22 do serviço
-GITEA__server__SSH_DOMAIN: "191.252.224.94.nip.io"
-```
-
-Colocando um _host_ que aponte para o IP do load balancer criado para a porta 22 do serviço.
-
-### Configuração do Action Runner
-
-No menu do _Gitea_, clicar em `Admin Settings` -> `Actions` -> `Runners` e clicar em `Create new Runner`.
-
-Configurar o servidor _Action Runner_ usando as instruções do repo [gitea-act-runner-ansible](https://github.com/lwsa-tech/gitea-act-runner-ansible)
-
-- Copie o valor do token exibido no _Gitea_
-- Utilize a _URL_ raiz do _Gitea_
-- Copie o link da [release](https://gitea.com/gitea/act_runner/releases) _stable_ mais recente.
-
-## Roteiro de testes
-
-
+Clique em `Settings` -> `Actions` -> `Secrets` e adicione um novo segredo chamado `PACKAGE_REGISTRY_TOKEN` com o valor do token de acesso ao package registry.
 
 
 

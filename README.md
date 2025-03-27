@@ -10,11 +10,38 @@ Crie um usuário no _Gitea_ logando-se via fonte de autenticação corporativa.
 
 Clique em `User Settings` -> `SSH / GPG Keys` e cadastre a parte pública da sua chave SSH.
 
-### Token de acesso ao package registry
+### Package registry
+
+#### Token de acesso ao package registry
 
 Clique em `User Settings` -> `Applications` -> `Manage Access Tokens` e crie um novo token de acesso.
 
 Em `Token Name` coloque `Package Registry Token`. Clique em `Select permissions` e marque `package`: `Read and Write`. Pressione o botão `Generate Token` e copie o valor do token.
+
+#### Publicação de pacotes no package registry
+
+```bash
+mkdir hello-gitea
+cd hello-gitea
+vi Dockerfile
+```
+
+```dockerfile
+FROM alpine:latest
+CMD ["echo", "Alo Gitea!"]
+```
+
+```bash
+# Substitua <package registry token> pelo token de acesso ao package registry
+export GITEA_TOKEN=<package registry token>
+docker build -t hello-gitea .
+# Substitua pelo host e usuário do Gitea
+docker tag hello-gitea forge-gitea.global.staging.platform-tools.ingress.sh/gilberto.mautner/hello-gitea:v1
+docker login forge-gitea.global.staging.platform-tools.ingress.sh \
+  -u nobody \
+  -p $GITEA_TOKEN
+docker push forge-gitea.global.staging.platform-tools.ingress.sh/gilberto.mautner/hello-gitea:v1
+```
 
 ### Criação de repositório
 

@@ -45,15 +45,36 @@ docker push forge-gitea.global.staging.platform-tools.ingress.sh/gilberto.mautne
 
 Confira no _Gitea_ clicando no seu usuário e depois em `Packages`.
 
+### Criação de repositório
+
+Criaremos um repositório migrando a partir de um repositório existente no GitHub.
+
+No canto superior direito, clique em `+` e `New Migration`.
+
+Em `Clone from URL`, preencha com: `https://github.com/gmautner/python-web-app.git`.
+
+Em `Repository Name`, preencha com: `python-web-app`.
+
+Em `Visibility`, selecione `Make repository private`.
+
+Clique em `Migrate Repository`.
+
+#### Acesso via VS Code ou Cursor
+
+Na página principal do repositório recém criado, clique em `Code`, `SSH` e copie o link do repositório. Com este link abra o repositório no VS Code ou Cursor.
+
+### Configuração de Actions
+
+Acesse o arquivo `.github/workflows/ci.yml`.
+
+Nas chaves `registry` e `tags`, substitua `forge-gitea.global.staging.platform-tools.ingress.sh` pelo host do seu Gitea. Na chave `tags`, substitua `gilberto.mautner` pelo seu usuário do Gitea.
+
+Observe que o arquivo `.github/workflows/ci.yml` utiliza um segredo chamado `PACKAGE_REGISTRY_TOKEN`. Para criar o segredo no _Gitea_, acesse o repositório, clique em `Settings` -> `Actions` -> `Secrets` e adicione um novo segredo chamado `PACKAGE_REGISTRY_TOKEN` com o valor do token de acesso ao package registry criado anteriormente.
+
+Prossiga com `git push` para o repositório. Observe, no _Gitea_, que a Actions foi acionada e que o pacote foi publicado.
+
 #### Vinculando um pacote a um repositório
 
 No menu direito superior, clique no seu avatar e `Profile`. Selecione `Packages` e clique no pacote a ser vinculado. Selecione `Settings` -> `Link to repository` e selecione o repositório a ser vinculado.
-
-### Criação de repositório
-
-Crie um novo repositório no _Gitea_ chamado `python-web-app`.
-
-Clique em `Settings` -> `Actions` -> `Secrets` e adicione um novo segredo chamado `PACKAGE_REGISTRY_TOKEN` com o valor do token de acesso ao package registry.
-
 
 

@@ -45,6 +45,10 @@ docker push forge-gitea.global.staging.platform-tools.ingress.sh/gilberto.mautne
 
 Confira no _Gitea_ clicando no seu usuário e depois em `Packages`.
 
+#### Vinculando um pacote a um repositório
+
+No menu direito superior, clique no seu avatar e `Profile`. Selecione `Packages` e clique no pacote a ser vinculado. Selecione `Settings` -> `Link to repository` e selecione o repositório a ser vinculado.
+
 ### Criação de repositório
 
 Crie um novo repositório no _Gitea_ chamado `python-web-app`.

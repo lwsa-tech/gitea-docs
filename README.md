@@ -1,3 +1,5 @@
+# Guia de utilização do Gitea
+
 ## Criação de usuário
 
 Crie um usuário no _Gitea_ logando-se via fonte de autenticação corporativa.

@@ -1,8 +1,6 @@
-# Gitea
+# Guia de instalação do Gitea
 
-## Instalação
-
-### Preparação do blueprint
+## Preparação do blueprint
 
 Use como base o _blueprint_ disponível em [blueprint.yaml](https://github.com/lwsa-tech/platform-tools-workloads/blob/main/staging/blueprints/forge/blueprint.yaml).
 
@@ -14,7 +12,7 @@ Ao aplicar pela primeira vez o _blueprint_, manter comentada a linha:
 # GITEA__service__ALLOW_ONLY_EXTERNAL_REGISTRATION: "true"
 ```
 
-### Criação do usuário admin
+## Criação do usuário admin
 
 No primeiro acesso, criar um usuário `admin`. Cadastre a senha no Keeper.
 
@@ -31,7 +29,7 @@ Logar-se via fonte de autenticação corporativa como o usuário que deverá ser
 
 Logar-se novamente como usuário `admin` e, no menu do _Gitea_, clicar em `Admin Settings` -> `Identity & Access` -> `User Accounts` e editar o usuário que se tornará o administrador, habilitado `Is Administrator` e `Update User Account`.
 
-### Configuração do acesso SSH
+## Configuração do acesso SSH
 
 Editar, no _blueprint_, a linha:
 
@@ -42,7 +40,7 @@ GITEA__server__SSH_DOMAIN: "191.252.224.94.nip.io"
 
 Colocando um _host_ que aponte para o IP do load balancer criado para a porta 22 do serviço.
 
-### Configuração do Action Runner
+## Configuração do Action Runner
 
 No menu do _Gitea_, clicar em `Admin Settings` -> `Actions` -> `Runners` e clicar em `Create new Runner`.
 

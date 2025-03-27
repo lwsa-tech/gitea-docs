@@ -71,6 +71,10 @@ Observe que o arquivo `.github/workflows/ci.yml` utiliza um segredo chamado `PAC
 
 Prossiga com `git push` para o repositório. Observe, no _Gitea_, que a Actions foi acionada e que o pacote foi publicado.
 
+### Habilitando Renovate Bot
+
+Clique em `Settings` -> `Collaborators` e adicione `renovate-bot` com direito de `Write`.
+
 ### Vinculando um pacote a um repositório
 
 No menu direito superior, clique no seu avatar e `Profile`. Selecione `Packages` e clique no pacote a ser vinculado. Selecione `Settings` -> `Link to repository` e selecione o repositório a ser vinculado.

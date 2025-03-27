@@ -43,6 +43,8 @@ docker login forge-gitea.global.staging.platform-tools.ingress.sh \
 docker push forge-gitea.global.staging.platform-tools.ingress.sh/gilberto.mautner/hello-gitea:v1
 ```
 
+Confira no _Gitea_ clicando no seu usuário e depois em `Packages`.
+
 ### Criação de repositório
 
 Crie um novo repositório no _Gitea_ chamado `python-web-app`.

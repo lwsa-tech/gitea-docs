@@ -61,7 +61,7 @@ Na página principal do repositório recém criado, clique em `Code`, `SSH` e co
 
 ### Configuração de Actions
 
-Acesse o arquivo `.github/workflows/ci.yml`.
+Edite o arquivo `.github/workflows/ci.yml` no VS Code ou Cursor.
 
 Nas chaves `registry` e `tags`, substitua `forge-gitea.global.staging.platform-tools.ingress.sh` pelo host do seu Gitea. Na chave `tags`, substitua `gilberto.mautner` pelo seu usuário do Gitea.
 

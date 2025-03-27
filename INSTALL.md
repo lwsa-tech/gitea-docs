@@ -68,7 +68,10 @@ Logue-se no _Gitea_ como o usuário `renovate-bot` e, no menu do _Gitea_, clicar
 
 `Token Name`: `renovate-bot`
 
-`Select permissions`: `Read and Write` em `issue` e `repository`.
+`Select permissions`:
+
+- `Read and Write` em `issue` e `repository`.
+- `Read` em `users`.
 
 Ao criar o token, copie o valor do token e anote-o no Keeper num _hidden field_ com _label_ `Token` no segredo criado no Keeper para o `renovate-bot`.
 

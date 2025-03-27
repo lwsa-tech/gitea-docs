@@ -43,6 +43,16 @@ docker push forge-gitea.global.staging.platform-tools.ingress.sh/gilberto.mautne
 
 Confira no _Gitea_ clicando no seu usuário e depois em `Packages`.
 
+### Tornando o package registry privado
+
+No modelo de acesso do _Gitea_, a visibilidade de pacotes depende da visibilidade do usuário. Por _default_, o usuário é público, de forma que os pacotes associados a ele também são públicos. 
+
+Para tornar o package registry privado, é necessário alterar a visibilidade do usuário.
+
+No seu avatar, clique em `Settings` -> `Profile` e altere `User Visibility` para `Limited`.
+
+Com isso, imagens de containers publicadas no package registry passam a ser privadas, podendo ser acessadas usando o token de acesso ao package registry.
+
 ## Criação de repositório
 
 Criaremos um repositório migrando a partir de um repositório existente no GitHub.

@@ -1,8 +1,4 @@
-# Gitea
-
-## Uso
-
-### Criação de usuário
+## Criação de usuário
 
 Crie um usuário no _Gitea_ logando-se via fonte de autenticação corporativa.
 
@@ -10,15 +6,15 @@ Crie um usuário no _Gitea_ logando-se via fonte de autenticação corporativa.
 
 Clique em `User Settings` -> `SSH / GPG Keys` e cadastre a parte pública da sua chave SSH.
 
-### Package registry
+## Package registry
 
-#### Token de acesso ao package registry
+### Token de acesso ao package registry
 
 Clique em `User Settings` -> `Applications` -> `Manage Access Tokens` e crie um novo token de acesso.
 
 Em `Token Name` coloque `Package Registry Token`. Clique em `Select permissions` e marque `package`: `Read and Write`. Pressione o botão `Generate Token` e copie o valor do token.
 
-#### Publicação de pacotes no package registry
+### Publicação de pacotes no package registry
 
 ```bash
 mkdir hello-gitea
@@ -45,7 +41,7 @@ docker push forge-gitea.global.staging.platform-tools.ingress.sh/gilberto.mautne
 
 Confira no _Gitea_ clicando no seu usuário e depois em `Packages`.
 
-### Criação de repositório
+## Criação de repositório
 
 Criaremos um repositório migrando a partir de um repositório existente no GitHub.
 
@@ -59,7 +55,7 @@ Em `Visibility`, selecione `Make repository private`.
 
 Clique em `Migrate Repository`.
 
-#### Acesso via VS Code ou Cursor
+### Acesso via VS Code ou Cursor
 
 Na página principal do repositório recém criado, clique em `Code`, `SSH` e copie o link do repositório. Com este link abra o repositório no VS Code ou Cursor.
 
@@ -73,7 +69,7 @@ Observe que o arquivo `.github/workflows/ci.yml` utiliza um segredo chamado `PAC
 
 Prossiga com `git push` para o repositório. Observe, no _Gitea_, que a Actions foi acionada e que o pacote foi publicado.
 
-#### Vinculando um pacote a um repositório
+### Vinculando um pacote a um repositório
 
 No menu direito superior, clique no seu avatar e `Profile`. Selecione `Packages` e clique no pacote a ser vinculado. Selecione `Settings` -> `Link to repository` e selecione o repositório a ser vinculado.
 

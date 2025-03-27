@@ -21,8 +21,9 @@ Em `Token Name` coloque `Package Registry Token`. Clique em `Select permissions`
 ```bash
 mkdir hello-gitea
 cd hello-gitea
-vi Dockerfile
 ```
+
+Crie um arquivo chamado `Dockerfile` com o seguinte conteúdo:
 
 ```dockerfile
 FROM alpine:latest

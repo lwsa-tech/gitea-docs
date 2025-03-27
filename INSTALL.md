@@ -49,3 +49,39 @@ Configurar o servidor _Action Runner_ usando as instruções do repo [gitea-act-
 - Copie o valor do token exibido no _Gitea_
 - Utilize a _URL_ raiz do _Gitea_
 - Copie o link da [release](https://gitea.com/gitea/act_runner/releases) _stable_ mais recente.
+
+## Configuração do Renovate Bot
+
+`Admin Settings` -> `Identity & Access` -> `User Accounts` -> `Create User Account`
+
+`Authentication Source`: `Local`
+
+`Username`: `renovate-bot`
+
+`Email`: `bot@bot.com`
+
+`Password`: gere uma senha forte e anote-a no Keeper.
+
+Desative `Require user to change password`
+
+Logue-se no _Gitea_ como o usuário `renovate-bot` e, no menu do _Gitea_, clicar em `User Settings` -> `Applications` -> `Generate New Token`.
+
+`Token Name`: `renovate-bot`
+
+`Select permissions`: `Read and Write` em `issue` e `repository`.
+
+Ao criar o token, copie o valor do token e anote-o no Keeper num _hidden field_ com _label_ `Token` no segredo criado no Keeper para o `renovate-bot`.
+
+`Create...` -> `New migration` -> `GitHub`
+
+`Clone from URL`: `https://github.com/lwsa-tech/gitea-renovate.git`
+
+`Repository name`: `gitea-renovate`
+
+`Visibility`: `Make repository private`
+
+Clique em `Migrate Repository`.
+
+Edite o arquivo `config.js` atualizando o _entpoint_ para o endereço do _Gitea_.
+
+No repositório recém criado, clicar em `Settings` -> `Actions` -> `Secrets` -> `Add Secret`, nome `RENOVATE_TOKEN` e no valor coloque o token criado para o `renovate-bot`.

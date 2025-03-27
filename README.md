@@ -39,6 +39,7 @@ docker tag hello-gitea forge-gitea.global.staging.platform-tools.ingress.sh/gilb
 docker login forge-gitea.global.staging.platform-tools.ingress.sh \
   -u nobody \
   -p $GITEA_TOKEN
+# Substitua pelo host e usuário do Gitea
 docker push forge-gitea.global.staging.platform-tools.ingress.sh/gilberto.mautner/hello-gitea:v1
 ```
 

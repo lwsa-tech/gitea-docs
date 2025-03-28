@@ -91,4 +91,40 @@ Clique em `Settings` -> `Collaborators` e adicione `renovate-bot` com direito de
 
 No menu direito superior, clique no seu avatar e `Profile`. Selecione `Packages` e clique no pacote a ser vinculado. Selecione `Settings` -> `Link to repository` e selecione o repositório a ser vinculado.
 
+## Configuração de acessos
+
+### Criando uma organização
+
+No canto superior direito, clique em `+` e `New Organization`.
+
+Preencha `Organization Name` com o nome da organização, exemplo `bu-org`.
+
+Em `Visibility`, selecione `Limited`. Mantenha marcado `Repository admin can add or remove access for teams`.
+
+Clique em `Create Organization`.
+
+### Criando um time na organização
+
+Na página da organização, clique em `New Team`. Escolha um nome para o time, exemplo `devops`.
+
+Mantenha `Repository access`: `Specific repositories`. 
+
+Para que membros do time tenham acesso de escrita aos repositórios, selecione `Permission`: `Administrator Access`.
+
+Para um controle mais granular, selecione `Permission`: `General Access` e escolha as permissões aplicáveis.  
+
+Clique em `Create Team`.
+
+### Adicionando membros ao time
+
+Basta clicar em `Add Team Member`
+
+### Adicionando um repositório a uma organização
+
+Na página da organização, clique em `New Repository`.
+
+### Adicionando um time a um repositório
+
+Na página do repositório acesse `Settings` -> `Collaborators` e selecione `Add Team` para adicionar o time desejado.
+
 

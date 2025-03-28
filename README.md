@@ -1,4 +1,5 @@
 - [Guia de utilização do Gitea](#guia-de-utilização-do-gitea)
+  - [Endereços](#endereços)
   - [Criação de usuário](#criação-de-usuário)
     - [Cadastro de chave SSH](#cadastro-de-chave-ssh)
   - [Package registry](#package-registry)
@@ -18,6 +19,10 @@
     - [Adicionando um time a um repositório](#adicionando-um-time-a-um-repositório)
 
 # Guia de utilização do Gitea
+
+## Endereços
+
+- [Staging](https://forge-gitea.global.staging.platform-tools.ingress.sh)
 
 ## Criação de usuário
 

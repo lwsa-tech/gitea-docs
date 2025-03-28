@@ -1,3 +1,22 @@
+- [Guia de utilização do Gitea](#guia-de-utilização-do-gitea)
+  - [Criação de usuário](#criação-de-usuário)
+    - [Cadastro de chave SSH](#cadastro-de-chave-ssh)
+  - [Package registry](#package-registry)
+    - [Token de acesso ao package registry](#token-de-acesso-ao-package-registry)
+    - [Publicação de pacotes no package registry](#publicação-de-pacotes-no-package-registry)
+    - [Tornando o package registry privado](#tornando-o-package-registry-privado)
+  - [Criação de repositório](#criação-de-repositório)
+    - [Acesso via VS Code ou Cursor](#acesso-via-vs-code-ou-cursor)
+    - [Configuração de Actions](#configuração-de-actions)
+    - [Habilitando Renovate Bot](#habilitando-renovate-bot)
+    - [Vinculando um pacote a um repositório](#vinculando-um-pacote-a-um-repositório)
+  - [Configuração de acessos](#configuração-de-acessos)
+    - [Criando uma organização](#criando-uma-organização)
+    - [Criando um time na organização](#criando-um-time-na-organização)
+    - [Adicionando membros ao time](#adicionando-membros-ao-time)
+    - [Adicionando um repositório a uma organização](#adicionando-um-repositório-a-uma-organização)
+    - [Adicionando um time a um repositório](#adicionando-um-time-a-um-repositório)
+
 # Guia de utilização do Gitea
 
 ## Criação de usuário
@@ -126,5 +145,3 @@ Na página da organização, clique em `New Repository`.
 ### Adicionando um time a um repositório
 
 Na página do repositório acesse `Settings` -> `Collaborators` e selecione `Add Team` para adicionar o time desejado.
-
-

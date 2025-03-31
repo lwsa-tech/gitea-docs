@@ -26,7 +26,7 @@
 
 ## Criação de usuário
 
-Crie um usuário no _Gitea_ logando-se via fonte de autenticação corporativa.
+Crie um usuário no _Gitea_ clicando em `Sign in` e depois em `Sign in with gitea-staging`. 
 
 ### Cadastro de chave SSH
 

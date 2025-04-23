@@ -58,12 +58,12 @@ CMD ["echo", "Alo Gitea!"]
 # Substitua <package registry token> pelo token de acesso ao package registry
 export GITEA_TOKEN=<package registry token>
 docker build -t hello-gitea .
-# Substitua pelo host e usuário do Gitea
+# Substitua pelo seu usuário do Gitea
 docker tag hello-gitea gitea.platform.lwsa.tech/gilberto.mautner/hello-gitea:v1
 docker login gitea.platform.lwsa.tech \
   -u nobody \
   -p $GITEA_TOKEN
-# Substitua pelo host e usuário do Gitea
+# Substitua pelo seu usuário do Gitea
 docker push gitea.platform.lwsa.tech/gilberto.mautner/hello-gitea:v1
 ```
 
@@ -101,7 +101,7 @@ Na página principal do repositório recém criado, clique em `Code`, `SSH` e co
 
 Edite o arquivo `.github/workflows/ci.yml` no VS Code ou Cursor.
 
-Nas chaves `registry` e `tags`, substitua `gitea.platform.lwsa.tech` pelo host do seu Gitea. Na chave `tags`, substitua `gilberto.mautner` pelo seu usuário do Gitea.
+Na chave `images`, substitua `gilberto.mautner` pelo seu usuário do Gitea.
 
 Observe que o arquivo `.github/workflows/ci.yml` utiliza um segredo chamado `PACKAGE_REGISTRY_TOKEN`. Para criar o segredo no _Gitea_, acesse o repositório, clique em `Settings` -> `Actions` -> `Secrets` e adicione um novo segredo chamado `PACKAGE_REGISTRY_TOKEN` com o valor do token de acesso ao package registry criado anteriormente.
 

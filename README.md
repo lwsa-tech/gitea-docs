@@ -5,7 +5,6 @@
   - [Package registry](#package-registry)
     - [Token de acesso ao package registry](#token-de-acesso-ao-package-registry)
     - [Publicação de pacotes no package registry](#publicação-de-pacotes-no-package-registry)
-    - [Tornando o package registry privado](#tornando-o-package-registry-privado)
   - [Criação de repositório](#criação-de-repositório)
     - [Acesso via VS Code ou Cursor](#acesso-via-vs-code-ou-cursor)
     - [Configuração de Actions](#configuração-de-actions)
@@ -69,15 +68,7 @@ docker push gitea.platform.lwsa.tech/gilberto.mautner/hello-gitea:v1
 
 Confira no _Gitea_ clicando no seu usuário e depois em `Packages`.
 
-### Tornando o package registry privado
-
-No modelo de acesso do _Gitea_, a visibilidade de pacotes depende da visibilidade do usuário. Por _default_, o usuário é público, de forma que os pacotes associados a ele também são públicos. 
-
-Para tornar o package registry privado, é necessário alterar a visibilidade do usuário.
-
-No seu avatar, clique em `Settings` -> `Profile` e altere `User Visibility` para `Limited`.
-
-Com isso, imagens de containers publicadas no package registry passam a ser privadas, podendo ser acessadas usando o token de acesso ao package registry.
+TODO: Criar outro token só de leitura.
 
 ## Criação de repositório
 

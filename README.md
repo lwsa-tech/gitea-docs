@@ -1,5 +1,5 @@
 - [Guia de utilização do Gitea](#guia-de-utilização-do-gitea)
-  - [Endereços](#endereços)
+  - [Endereço](#endereço)
   - [Criação de usuário](#criação-de-usuário)
     - [Cadastro de chave SSH](#cadastro-de-chave-ssh)
   - [Package registry](#package-registry)
@@ -20,9 +20,9 @@
 
 # Guia de utilização do Gitea
 
-## Endereços
+## Endereço
 
-- [[Prod](https://gitea.platform.lwsa.tech)](https://gitea.platform.lwsa.tech)
+https://gitea.platform.lwsa.tech
 
 ## Criação de usuário
 

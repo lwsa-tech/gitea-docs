@@ -5,6 +5,7 @@
   - [Package registry](#package-registry)
     - [Token de acesso ao package registry](#token-de-acesso-ao-package-registry)
     - [Publicação de pacotes no package registry](#publicação-de-pacotes-no-package-registry)
+    - [Token de acesso somente leitura ao package registry](#token-de-acesso-somente-leitura-ao-package-registry)
   - [Criação de repositório](#criação-de-repositório)
     - [Acesso via VS Code ou Cursor](#acesso-via-vs-code-ou-cursor)
     - [Configuração de Actions](#configuração-de-actions)
@@ -68,7 +69,17 @@ docker push gitea.platform.lwsa.tech/gilberto.mautner/hello-gitea:v1
 
 Confira no _Gitea_ clicando no seu usuário e depois em `Packages`.
 
-TODO: Criar outro token só de leitura.
+### Token de acesso somente leitura ao package registry
+
+Em alguns cenários, como ao configurar um ambiente de execução de contêineres (por exemplo, Kubernetes) para baixar imagens do package registry do Gitea, pode ser conveniente utilizar um token com permissão apenas de leitura.
+
+Para criar este tipo de token, siga os mesmos passos da criação do token de acesso padrão:
+
+Clique em `User Settings` -> `Applications` -> `Manage Access Tokens` e crie um novo token de acesso.
+
+Em `Token Name` coloque um nome descritivo, por exemplo `Read-Only Package Registry Token`. Clique em `Select permissions` e marque `package`: `Read`. Pressione o botão `Generate Token` e copie o valor do token.
+
+Este token poderá ser utilizado para autenticar operações de `docker pull` ou equivalentes, garantindo que a credencial utilizada tenha apenas as permissões mínimas necessárias.
 
 ## Criação de repositório
 

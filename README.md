@@ -26,7 +26,7 @@ https://gitea.platform.lwsa.tech
 
 ## Criação de usuário
 
-Crie um usuário no _Gitea_ clicando em `Sign in` e depois em `Sign in with gitea-staging`. 
+Crie um usuário no _Gitea_ clicando em `Sign in` e depois em `Sign in with gitea-prod`. 
 
 ### Cadastro de chave SSH
 

@@ -2,7 +2,7 @@
 
 ## Preparação do blueprint
 
-Use como base o _blueprint_ disponível em [blueprint.yaml](https://github.com/lwsa-tech/platform-tools-workloads/blob/main/staging/blueprints/forge/blueprint.yaml).
+Use como base o _blueprint_ disponível em [blueprint.yaml](https://github.com/lwsa-tech/platform-tools-workloads/blob/main/prod/blueprints/forge/blueprint.yaml).
 
 O valor de `GITEA__mailer__PASSWD` no segredo `smtp` do _blueprint_ deve ser gerado e atualizado segundo orientação no repo [platform-infra](https://github.com/lwsa-tech/platform-infra).
 
